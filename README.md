@@ -1,6 +1,3 @@
-# dotfiles
-Config files for setup
-
 Dotfiles
 ========
 This repository includes all of my custom dotfiles.  They should be cloned to
