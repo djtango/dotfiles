@@ -35,3 +35,17 @@ cd ~/dotfiles
 
 
 source: http://blog.smalleycreative.com/tutorials/using-git-and-github-to-manage-your-dotfiles/
+
+
+Set up prompts
+----------------
+
+Ruby + RVM
+Java + JavaREPL
+https://github.com/albertlatacz/java-repl
+```
+brew install ant
+```
+set up symlink
+Leiningen
+Node
