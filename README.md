@@ -43,9 +43,12 @@ Set up prompts
 Ruby + RVM
 Java + JavaREPL
 https://github.com/albertlatacz/java-repl
+
 ```
 brew install ant
-```
+ln -s ~/Desktop/Projects2/misc/java-repl/build/artifacts/javarepl-dev.build
 set up symlink
+```
+
 Leiningen
 Node
