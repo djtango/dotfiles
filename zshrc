@@ -52,12 +52,14 @@ plugins=(git)
 
 # User configuration
 
-  export PATH="/home/deon/.rvm/gems/ruby-2.1.5/bin:/home/deon/.rvm/gems/ruby-2.1.5@global/bin:/home/deon/.rvm/rubies/ruby-2.1.5/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/home/deon/.rvm/bin:/home/deon/.rvm/bin:/home/deon/.rvm/bin"
+  export PATH="/home/deon/.rvm/gems/ruby-2.3.0/bin:/home/deon/.rvm/gems/ruby-2.3.0@global/bin:/home/deon/.rvm/rubies/ruby-2.3.0/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/home/deon/.rvm/bin:/home/deon/.rvm/bin:/home/deon/.rvm/bin"
 
 #copy of bashrc settings
   export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
   export PATH="$PATH:/opt/ant/bin" # Add apache-ant to PATH
   export PATH="$PATH:$HOME/dev-tools/javarepl/bin" #Add javarepl to PATH
+  export PATH="$PATH:$HOME/dev-tools/idea-IC-143.1184.17/bin" #Add intellij
+  export PATH="$PATH:$HOME/dev-tools/scala-2.11.7/bin"
 
   if [ "$TERM" = "xterm" ]
   then

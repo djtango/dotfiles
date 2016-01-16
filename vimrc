@@ -16,6 +16,7 @@ Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'tpope/vim-surround'
 Plugin 'Raimondi/delimitMate'
 Plugin 'zhaocai/GoldenView.Vim'
+Plugin 'Valloric/YouCompleteMe'
 
 call vundle#end()
 filetype plugin indent on
@@ -24,7 +25,10 @@ colorscheme gruvbox
 set bg=dark
 set number
 set relativenumber
+"enable yanking to clipboard for Mac
 set clipboard=unnamed
+"enable yanking to clipboard for Linux
+set clipboard=unnamedplus
 
 set cursorline
 set ruler
@@ -37,6 +41,9 @@ set shiftwidth=2
 set shiftround
 set expandtab
 
+"language-specific tabstops
+autocmd Filetype python setlocal ts=4 sts=4 sw=4
+autocmd Filetype java setlocal ts=4 sts=4 sw=4
 "Airline settings
 
 let g:airline#extensions#tabline#enabled = 1
@@ -83,3 +90,4 @@ nmap <leader>, :bp<cr>
 " nmap <leader>r <F5><cr>
 " Display extra whitespace
 set list listchars=tab:»·,trail:·
+
