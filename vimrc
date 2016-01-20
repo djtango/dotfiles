@@ -85,8 +85,8 @@ let g:ctrlp_custom_ignore = 'node_modules'
 " let g:ctrlp_custom_ignore = 'bower_components'
 " let g:ctrlp_custom_ignore = 'public/bower_components'
 " move through buffers quicker
-nmap <leader>. :bn<cr>
-nmap <leader>, :bp<cr>
+nmap <leader>x :bn<cr>
+nmap <leader>z :bp<cr>
 " nmap <leader>r <F5><cr>
 " Display extra whitespace
 set list listchars=tab:»·,trail:·
