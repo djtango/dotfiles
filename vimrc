@@ -91,3 +91,9 @@ nmap <leader>z :bp<cr>
 " Display extra whitespace
 set list listchars=tab:»·,trail:·
 
+"delimitMate settings
+
+au Filetype clojure let b:delimitMate_quotes = "\""
+let delimitMate_expand_space = 1
+let delimitMate_expand_cr = 1
+let delimitMate_jump_expansion = 1

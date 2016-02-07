@@ -55,6 +55,24 @@ plugins=(git)
   export PATH="/home/deon/.rvm/gems/ruby-2.3.0/bin:/home/deon/.rvm/gems/ruby-2.3.0@global/bin:/home/deon/.rvm/rubies/ruby-2.3.0/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/home/deon/.rvm/bin:/home/deon/.rvm/bin:/home/deon/.rvm/bin"
   export PATH="/home/deon/.rvm/gems/ruby-2.2.3/bin:/home/deon/.rvm/gems/ruby-2.2.3@global/bin:/home/deon/.rvm/rubies/ruby-2.2.3/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/home/deon/.rvm/bin:/home/deon/.rvm/bin:/home/deon/.rvm/bin"
 
+
+#expand dirstack to 9 and persist across terminal sessions
+
+DIRSTACKSIZE=9
+DIRSTACKFILE=~/.zdirs
+if [[ -f $DIRSTACKFILE  ]] && [[ $#dirstack -eq 0 ]]; then
+  dirstack=( ${(f)"$(< $DIRSTACKFILE)"} )
+  [[ -d $dirstack[1] }} && cd $dirstack[1] && cd $OLDPWD
+fi
+chpwd() {
+  print -l $PWD ${(u)dirstack} >$DIRSTACKFILE
+}
+
+#prepend space to cd and ls and ignore all commands beginning with a space in history
+alias ls=' ls'
+alias cd=' cd'
+setopt HIST_IGNORE_SPACE
+
 #copy of bashrc settings
   export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
   export PATH="$PATH:/opt/ant/bin" # Add apache-ant to PATH
