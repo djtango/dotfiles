@@ -1,11 +1,6 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =9
-let g:netrw_dirhist_1='/home/deon/Desktop/Projects/clojure/clojure-koans'
-let g:netrw_dirhist_2='/home/deon/Desktop/Projects/algorithms/sudoku'
-let g:netrw_dirhist_3='/home/deon/Desktop/Projects/algorithms/sudoku/lib'
+let g:netrw_dirhist_cnt =4
+let g:netrw_dirhist_1='/home/deon/Desktop/Projects/clojure/till_clj'
+let g:netrw_dirhist_2='/home/deon/Desktop/Projects/clojure/till_clj/test'
+let g:netrw_dirhist_3='/home/deon/Desktop/Projects/clojure/till_clj/test/till_clj'
 let g:netrw_dirhist_4='/home/deon/Desktop/Projects/clojure/till_clj'
-let g:netrw_dirhist_5='/home/deon/Desktop/Projects/clojure/till_clj/src'
-let g:netrw_dirhist_6='/home/deon/Desktop/Projects/clojure/till_clj/src/till_clj'
-let g:netrw_dirhist_7='/home/deon/Desktop/Projects/clojure/clojure-koans'
-let g:netrw_dirhist_8='/home/deon/Desktop/Projects/clojure/till_clj'
-let g:netrw_dirhist_9='/home/deon/dotfiles'
