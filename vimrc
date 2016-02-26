@@ -17,6 +17,7 @@ Plugin 'tpope/vim-surround'
 Plugin 'Raimondi/delimitMate'
 Plugin 'zhaocai/GoldenView.Vim'
 Plugin 'Valloric/YouCompleteMe'
+Plugin 'rking/ag.vim'
 
 call vundle#end()
 filetype plugin indent on
@@ -93,7 +94,7 @@ set list listchars=tab:»·,trail:·
 
 "delimitMate settings
 
-au Filetype clojure let b:delimitMate_quotes = "\""
+au Filetype clojure,scheme let b:delimitMate_quotes = "\""
 let delimitMate_expand_space = 1
 let delimitMate_expand_cr = 1
 let delimitMate_jump_expansion = 1
