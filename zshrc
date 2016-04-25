@@ -70,11 +70,7 @@ chpwd() {
 }
 
 #prepend space to cd and ls and ignore all commands beginning with a space in history
-alias ls=' ls'
-alias cd=' cd'
-alias fg=' fg'
-alias cljrepl=' lein repl'
-alias pm-suspend=' sudo pm-suspend'
+alias ls=' ls' cd=' cd' fg=' fg' pms=' pms'
 setopt HIST_IGNORE_SPACE
 
 #copy of bashrc settings

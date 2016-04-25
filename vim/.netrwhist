@@ -1,9 +1,5 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =7
-let g:netrw_dirhist_1='/home/deon/Desktop/Projects/clojure/made-tech'
-let g:netrw_dirhist_2='/home/deon/Desktop/Projects/clojure/clonnecj-4'
-let g:netrw_dirhist_3='/home/deon/Desktop/Projects/clojure/clonnecj-4/src'
-let g:netrw_dirhist_4='/home/deon/Desktop/Projects/clojure/clonnecj-4/src/clonnecj_4'
-let g:netrw_dirhist_5='/home/deon/Desktop/Projects/clojure/clonnecj-4'
-let g:netrw_dirhist_6='/home/deon/Desktop/Projects/clojure/clonnecj-4/src'
-let g:netrw_dirhist_7='/home/deon/Desktop/Projects/clojure/clonnecj-4'
+let g:netrw_dirhist_cnt =3
+let g:netrw_dirhist_1='/home/deon/Desktop/Projects/python/ahl-test'
+let g:netrw_dirhist_2='/home/deon/Desktop/Projects/python/ahl-test/tests'
+let g:netrw_dirhist_3='/home/deon/Desktop/Projects/python/ahl-test'
