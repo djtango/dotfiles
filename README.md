@@ -40,15 +40,16 @@ source: http://blog.smalleycreative.com/tutorials/using-git-and-github-to-manage
 Set up prompts
 ----------------
 
-Ruby + RVM
-Java + JavaREPL
-https://github.com/albertlatacz/java-repl
-
+Ruby + RVM<br/>
+Java + JavaREPL (https://github.com/albertlatacz/java-repl)<br/>
 ```
 brew install ant
 ln -s ~/Desktop/Projects2/misc/java-repl/build/artifacts/javarepl-dev.build
 set up symlink
 ```
 
-Leiningen
-Node
+Clojure + Leiningen<br/>
+Python + PIP<br/>
+Node + NPM<br/>
+Racket + DrRacket
+new GitHub SSH key
