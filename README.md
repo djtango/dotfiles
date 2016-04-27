@@ -41,7 +41,9 @@ Set up prompts
 Install vundle:<br/>
 ```git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim```
 Then in VIM, install plugins:<br/>
-```:PluginInstall```
+```
+:PluginInstall
+```
 
 Ruby + RVM<br/>
 Java + JavaREPL (https://github.com/albertlatacz/java-repl)<br/>
