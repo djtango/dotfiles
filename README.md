@@ -36,9 +36,11 @@ cd ~/dotfiles
 
 source: http://blog.smalleycreative.com/tutorials/using-git-and-github-to-manage-your-dotfiles/
 
-
 Set up prompts
 ----------------
+Install vundle:
+```git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim```
+
 
 Ruby + RVM<br/>
 Java + JavaREPL (https://github.com/albertlatacz/java-repl)<br/>
