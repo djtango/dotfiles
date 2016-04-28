@@ -52,6 +52,23 @@ Then in VIM, install plugins:<br/>
 ```
 :PluginInstall
 ```
+Compiling YCM in VIM
+Fedora:
+Download CMake:
+```
+sudo dnf install automake gcc gcc-c++ kernel-devel cmake
+
+```
+Download Python headers:
+```
+sudo dnf install python-devel python3-devel
+```
+Compile YCM:
+```
+cd ~/.vim/bundle/YouCompleteMe
+./install.py --clang-completer
+```
+
 For Fedora download vim-enhanced vim-X11 for copy-paste support:
 ```
 sudo dnf install vim-X11 vim-enhanced
