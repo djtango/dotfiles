@@ -91,3 +91,5 @@ Python + PIP<br/>
 Node + NPM<br/>
 Racket + DrRacket
 new GitHub SSH key
+Postgres
+http://tecadmin.net/install-postgresql-9-5-on-centos/
