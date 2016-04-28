@@ -28,7 +28,7 @@ set number
 set relativenumber
 "enable yanking to clipboard for Mac
 set clipboard=unnamed
-"enable yanking to clipboard for Linux
+"enable yanking to clipboard for Linux(Ubuntu/Mint)
 set clipboard=unnamedplus
 
 set cursorline
