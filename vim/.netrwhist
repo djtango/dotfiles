@@ -1,5 +1,11 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =3
+let g:netrw_dirhist_cnt =9
 let g:netrw_dirhist_1='/home/deon/Desktop/Projects/python/ahl-test'
 let g:netrw_dirhist_2='/home/deon/Desktop/Projects/python/ahl-test/tests'
 let g:netrw_dirhist_3='/home/deon/Desktop/Projects/python/ahl-test'
+let g:netrw_dirhist_4='/home/deon/.oh-my-zsh'
+let g:netrw_dirhist_5='/home/deon/.oh-my-zsh/custom'
+let g:netrw_dirhist_6='/home/deon/.oh-my-zsh'
+let g:netrw_dirhist_7='/home/deon/.oh-my-zsh/custom'
+let g:netrw_dirhist_8='/home/deon/.oh-my-zsh/custom/plugins'
+let g:netrw_dirhist_9='/home/deon/.oh-my-zsh/custom'
