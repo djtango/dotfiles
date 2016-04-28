@@ -38,6 +38,14 @@ source: http://blog.smalleycreative.com/tutorials/using-git-and-github-to-manage
 
 Set up prompts
 ----------------
+Configure `git hist` in .gitconfig:
+```
+hist = log --pretty=format:'%h %ad | %s%d [%an]' --graph --date=short
+```
+Ignore Vim swapfiles in git:
+```
+git config --global core.excludesfile ~/.gitignore
+```
 Install vundle:<br/>
 ```git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim```
 Then in VIM, install plugins:<br/>
