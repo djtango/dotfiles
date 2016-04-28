@@ -68,6 +68,11 @@ Compile YCM:
 cd ~/.vim/bundle/YouCompleteMe
 ./install.py --clang-completer
 ```
+Install Ag:
+```
+dnf install the_silver_searcher
+```
+
 
 For Fedora download vim-enhanced vim-X11 for copy-paste support:
 ```
