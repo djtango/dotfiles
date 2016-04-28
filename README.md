@@ -44,7 +44,10 @@ Then in VIM, install plugins:<br/>
 ```
 :PluginInstall
 ```
-
+For Fedora download vim-enhanced vim-X11 for copy-paste support:
+```
+sudo dnf install vim-X11 vim-enhanced
+```
 Ruby + RVM<br/>
 Java + JavaREPL (https://github.com/albertlatacz/java-repl)<br/>
 ```
