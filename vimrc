@@ -41,10 +41,13 @@ set tabstop=2
 set shiftwidth=2
 set shiftround
 set expandtab
+set cindent
+set lisp
 
 "language-specific tabstops
 autocmd Filetype python setlocal ts=4 sts=4 sw=4
 autocmd Filetype java setlocal ts=4 sts=4 sw=4
+"autocmd Filetype scheme setlocal ts=1 sts=1 sw=1
 "Airline settings
 
 let g:airline#extensions#tabline#enabled = 1
