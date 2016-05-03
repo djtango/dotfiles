@@ -32,6 +32,7 @@ set clipboard=unnamed
 set clipboard=unnamedplus
 
 set cursorline
+set cursorcolumn
 set ruler
 set showcmd
 set incsearch
