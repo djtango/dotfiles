@@ -26,7 +26,7 @@ filetype plugin indent on
 
 let g:solarized_termcolors=256
 colorscheme solarized "gruvbox 
-set bg=dark
+set bg=light
 set number
 set relativenumber
 "enable yanking to clipboard for Mac
@@ -45,8 +45,12 @@ set tabstop=2
 set shiftwidth=2
 set shiftround
 set expandtab
-set cindent
-autocmd Filetype racket setlocal lisp autoindent
+
+"Configure racket indentation
+if has("autocmd")
+  au filetype racket set lisp
+  au filetype racket set autoindent
+endif
 
 "language-specific tabstops
 autocmd Filetype python setlocal ts=4 sts=4 sw=4
