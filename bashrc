@@ -9,3 +9,7 @@ if [ "$TERM" = "xterm" ]
 then
   export TERM=xterm-256color
 fi
+
+if [ -f /etc/bashrc ]; then
+	. /etc/bashrc
+fi
