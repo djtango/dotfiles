@@ -19,11 +19,13 @@ Plugin 'zhaocai/GoldenView.Vim'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'rking/ag.vim'
 Plugin 'wlangstroth/vim-racket'
+Plugin 'altercation/vim-colors-solarized'
 
 call vundle#end()
 filetype plugin indent on
 
-colorscheme gruvbox 
+let g:solarized_termcolors=256
+colorscheme solarized "gruvbox 
 set bg=dark
 set number
 set relativenumber
