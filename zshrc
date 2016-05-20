@@ -70,7 +70,8 @@ chpwd() {
 }
 
 #prepend space to cd and ls and ignore all commands beginning with a space in history
-alias ls=' ls' cd=' cd' fg=' fg' pms=' pms'
+#these need to go into ~/.oh-my-zsh/custom/aliases.zsh
+alias ls=' ls' cd=' cd' fg=' fg' pms=' pms' vim='vimx' #use vimx for clipboard support in fedora
 setopt HIST_IGNORE_SPACE
 
 #copy of bashrc settings

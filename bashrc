@@ -4,6 +4,7 @@ export PATH="$PATH:$HOME/dev-tools/javarepl/bin" #Add javarepl to PATH
 export PATH="$PATH:$HOME/dev-tools/idea-IC-143.1184.17/bin" #Add intellij to PATH
 export PATH="$PATH:$HOME/dev-tools/scala-2.11.7/bin" #add scala
 export PATH="$PATH:$HOME/symlinks" #add symlinks
+export PATH="$PATH:/usr/local/racket-6.4/bin"
 
 if [ "$TERM" = "xterm" ]
 then

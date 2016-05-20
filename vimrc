@@ -18,6 +18,7 @@ Plugin 'Raimondi/delimitMate'
 Plugin 'zhaocai/GoldenView.Vim'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'rking/ag.vim'
+Plugin 'wlangstroth/vim-racket'
 
 call vundle#end()
 filetype plugin indent on
@@ -32,6 +33,7 @@ set clipboard=unnamed
 set clipboard=unnamedplus
 
 set cursorline
+set cursorcolumn
 set ruler
 set showcmd
 set incsearch
@@ -41,10 +43,13 @@ set tabstop=2
 set shiftwidth=2
 set shiftround
 set expandtab
+set cindent
+autocmd Filetype racket setlocal lisp autoindent
 
 "language-specific tabstops
 autocmd Filetype python setlocal ts=4 sts=4 sw=4
 autocmd Filetype java setlocal ts=4 sts=4 sw=4
+"autocmd Filetype scheme setlocal ts=1 sts=1 sw=1
 "Airline settings
 
 let g:airline#extensions#tabline#enabled = 1
@@ -98,3 +103,13 @@ au Filetype clojure,scheme let b:delimitMate_quotes = "\""
 let delimitMate_expand_space = 1
 let delimitMate_expand_cr = 1
 let delimitMate_jump_expansion = 1
+
+"YCMD settings
+let g:ycm_filetype_specific_completion_to_disable = {
+      \ 'gitcommit': 1,
+      \ 'racket': 1
+      \}
+let g:ycm_semantic_triggers = {
+      \'racket' : ['-', ':']
+      \}
+set omnifunc=syntaxcomplete#Complete
