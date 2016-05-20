@@ -1,11 +1,6 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =9
-let g:netrw_dirhist_1='/home/deon/gower-st/forecast-app'
-let g:netrw_dirhist_2='/home/deon/projects/sicp/chap3'
-let g:netrw_dirhist_3='scp://dt@elbert.gowerst//home/dt/gower-st/forecast-app/'
-let g:netrw_dirhist_4='/home/deon/.racket'
-let g:netrw_dirhist_5='/home/deon'
-let g:netrw_dirhist_6='scp://dt@elbert.gowerst//home/dt/gower/forecast-app/'
-let g:netrw_dirhist_7='scp://dt@elbert.gowerst//home/dt/gower-st/forecast-app/'
-let g:netrw_dirhist_8='scp://dt@elbert.gowerst//home/dt/gower-st/'
-let g:netrw_dirhist_9='/home/deon/gower-st/forecast-app'
+let g:netrw_dirhist_cnt =4
+let g:netrw_dirhist_1='/home/deon/gower-st/forecast-testing'
+let g:netrw_dirhist_2='/home/deon/dotfiles/vim/bundle/YouCompleteMe'
+let g:netrw_dirhist_3='/'
+let g:netrw_dirhist_4='/home/deon/gower-st/forecast-testing'

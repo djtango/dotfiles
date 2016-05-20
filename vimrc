@@ -18,6 +18,7 @@ Plugin 'Raimondi/delimitMate'
 Plugin 'zhaocai/GoldenView.Vim'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'rking/ag.vim'
+Plugin 'wlangstroth/vim-racket'
 
 call vundle#end()
 filetype plugin indent on
@@ -43,7 +44,7 @@ set shiftwidth=2
 set shiftround
 set expandtab
 set cindent
-set lisp
+autocmd Filetype racket setlocal lisp autoindent
 
 "language-specific tabstops
 autocmd Filetype python setlocal ts=4 sts=4 sw=4
@@ -102,3 +103,13 @@ au Filetype clojure,scheme let b:delimitMate_quotes = "\""
 let delimitMate_expand_space = 1
 let delimitMate_expand_cr = 1
 let delimitMate_jump_expansion = 1
+
+"YCMD settings
+let g:ycm_filetype_specific_completion_to_disable = {
+      \ 'gitcommit': 1,
+      \ 'racket': 1
+      \}
+let g:ycm_semantic_triggers = {
+      \'racket' : ['-', ':']
+      \}
+set omnifunc=syntaxcomplete#Complete
