@@ -25,8 +25,12 @@ call vundle#end()
 filetype plugin indent on
 
 let g:solarized_termcolors=256
-colorscheme solarized "gruvbox 
-set bg=light
+" Daytime
+" colorscheme solarized
+" set bg=light
+" Nighttime
+colorscheme gruvbox
+set bg=dark
 set number
 set relativenumber
 "enable yanking to clipboard for Mac
