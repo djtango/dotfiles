@@ -28,9 +28,11 @@ let g:solarized_termcolors=256
 " Daytime
 " colorscheme solarized
 " set bg=light
+
 " Nighttime
 colorscheme gruvbox
 set bg=dark
+
 set number
 set relativenumber
 "enable yanking to clipboard for Mac
@@ -54,6 +56,7 @@ set expandtab
 if has("autocmd")
   au filetype racket set lisp
   au filetype racket set autoindent
+  imap <C-\> <C-k>l*
 endif
 
 "language-specific tabstops
