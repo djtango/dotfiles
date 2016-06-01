@@ -1,11 +1,3 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =9
-let g:netrw_dirhist_1='/home/deon/gower-st/forecast-testing'
-let g:netrw_dirhist_2='/home/deon/dotfiles/vim/bundle/YouCompleteMe'
-let g:netrw_dirhist_3='/'
-let g:netrw_dirhist_4='/home/deon/gower-st/forecast-testing'
-let g:netrw_dirhist_5='/home/deon/gower-st/forecast-app'
-let g:netrw_dirhist_6='/home/deon/makers/boris-bikes2'
-let g:netrw_dirhist_7='/home/deon/makers/boris-bikes2/spec'
-let g:netrw_dirhist_8='/home/deon/makers/boris-bikes2'
-let g:netrw_dirhist_9='/home/deon/makers/boris-bikes2/lib'
+let g:netrw_dirhist_cnt =1
+let g:netrw_dirhist_1='/home/dt/gower-st/forecast-app'

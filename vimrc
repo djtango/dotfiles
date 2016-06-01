@@ -28,9 +28,11 @@ let g:solarized_termcolors=256
 " Daytime
 " colorscheme solarized
 " set bg=light
+
 " Nighttime
 colorscheme gruvbox
 set bg=dark
+
 set number
 set relativenumber
 "enable yanking to clipboard for Mac
