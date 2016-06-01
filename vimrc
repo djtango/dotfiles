@@ -56,6 +56,7 @@ set expandtab
 if has("autocmd")
   au filetype racket set lisp
   au filetype racket set autoindent
+  imap <C-\> <C-k>l*
 endif
 
 "language-specific tabstops

@@ -55,7 +55,7 @@ plugins=(git)
   export PATH="/home/deon/.rvm/gems/ruby-2.3.0/bin:/home/deon/.rvm/gems/ruby-2.3.0@global/bin:/home/deon/.rvm/rubies/ruby-2.3.0/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/home/deon/.rvm/bin:/home/deon/.rvm/bin:/home/deon/.rvm/bin"
   export PATH="/home/deon/.rvm/gems/ruby-2.2.3/bin:/home/deon/.rvm/gems/ruby-2.2.3@global/bin:/home/deon/.rvm/rubies/ruby-2.2.3/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/home/deon/.rvm/bin:/home/deon/.rvm/bin:/home/deon/.rvm/bin"
   export PATH="/home/deon/.rvm/gems/ruby-2.1.5/bin:/home/deon/.rvm/gems/ruby-2.1.5@global/bin:/home/deon/.rvm/rubies/ruby-2.1.5/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/home/deon/.rvm/bin:/home/deon/.rvm/bin:/home/deon/.rvm/bin"
-
+export PATH="$PATH:/usr/local/racket-6.4/bin"
 
 #expand dirstack to 9 and persist across terminal sessions
 
