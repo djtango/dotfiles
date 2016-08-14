@@ -26,12 +26,12 @@ filetype plugin indent on
 
 let g:solarized_termcolors=256
 " Daytime
-" colorscheme solarized
-" set bg=light
+colorscheme solarized
+set bg=light
 
 " Nighttime
-colorscheme gruvbox
-set bg=dark
+" colorscheme gruvbox
+" set bg=dark
 
 set number
 set relativenumber
@@ -107,7 +107,8 @@ let g:ctrlp_custom_ignore = 'node_modules'
 nmap <leader>x :bn<cr>
 nmap <leader>z :bp<cr>
 " nmap <leader>r <F5><cr>
-" Display extra whitespace
+"
+" Display trailing/extra whitespace
 set list listchars=tab:»·,trail:·
 
 "delimitMate settings
