@@ -35,10 +35,17 @@ let g:solarized_termcolors=256
 " set bg=dark
 
 " alt for local
-colorscheme murphy
+" colorscheme murphy
+" set bg=dark
+" set number
+" set relativenumber
+
+" alt for pairbox
+colorscheme solarized
 set bg=dark
 set number
 set relativenumber
+
 "enable yanking to clipboard for Mac
 set clipboard=unnamed
 "enable yanking to clipboard for Linux(Ubuntu/Mint)
