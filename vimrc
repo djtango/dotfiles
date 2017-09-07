@@ -20,19 +20,23 @@ Plugin 'Valloric/YouCompleteMe'
 Plugin 'rking/ag.vim'
 Plugin 'wlangstroth/vim-racket'
 Plugin 'altercation/vim-colors-solarized'
+Plugin 'raichoo/purescript-vim'
 
 call vundle#end()
 filetype plugin indent on
 
 let g:solarized_termcolors=256
 " Daytime
-colorscheme solarized
-set bg=light
+" colorscheme solarized
+" set bg=light
 
 " Nighttime
 " colorscheme gruvbox
 " set bg=dark
 
+" alt for local
+colorscheme murphy
+set bg=dark
 set number
 set relativenumber
 "enable yanking to clipboard for Mac
@@ -118,6 +122,7 @@ let delimitMate_expand_space = 1
 let delimitMate_expand_cr = 1
 let delimitMate_jump_expansion = 1
 
+au Filetype java let b:delimitMate_matchpairs = "(:),[:],{:},<:>"
 "YCMD settings
 let g:ycm_filetype_specific_completion_to_disable = {
       \ 'gitcommit': 1,

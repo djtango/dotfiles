@@ -71,7 +71,8 @@ chpwd() {
 
 #prepend space to cd and ls and ignore all commands beginning with a space in history
 #these need to go into ~/.oh-my-zsh/custom/aliases.zsh
-alias ls=' ls' cd=' cd' fg=' fg' pms=' pms' vim='vimx' #use vimx for clipboard support in fedora
+alias cd=' cd' fg=' fg' pms=' pms' vim='vimx' #use vimx for clipboard support in fedora
+alias ls=' ls --color=auto'
 setopt HIST_IGNORE_SPACE
 
 #copy of bashrc settings
@@ -80,7 +81,9 @@ setopt HIST_IGNORE_SPACE
   export PATH="$PATH:$HOME/dev-tools/javarepl/bin" #Add javarepl to PATH
   export PATH="$PATH:$HOME/dev-tools/idea-IC-143.1184.17/bin" #Add intellij
   export PATH="$PATH:$HOME/dev-tools/scala-2.11.7/bin" #Add scala
-  export PATH="$PATH:$HOME/symlinks" #add symlinks
+  export PATH="$PATH:/usr/local/racket-6.5/bin" #add racket
+ export PATH="$PATH:$HOME/symlinks" #add symlinks
+ export PATH="$PATH:$HOME/torch/install/bin" #add torch
 
   if [ "$TERM" = "xterm" ]
   then
