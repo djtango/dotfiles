@@ -27,8 +27,8 @@ filetype plugin indent on
 
 let g:solarized_termcolors=256
 " Daytime
-" colorscheme solarized
-" set bg=light
+colorscheme solarized
+set bg=light
 
 " Nighttime
 " colorscheme gruvbox
@@ -41,10 +41,10 @@ let g:solarized_termcolors=256
 " set relativenumber
 
 " alt for pairbox
-colorscheme solarized
-set bg=dark
+" colorscheme solarized
+" set bg=dark
 set number
-set relativenumber
+" set relativenumber
 
 "enable yanking to clipboard for Mac
 set clipboard=unnamed
@@ -139,3 +139,66 @@ let g:ycm_semantic_triggers = {
       \'racket' : ['-', ':']
       \}
 set omnifunc=syntaxcomplete#Complete
+
+"clojure repl
+" function! FindCljNs()
+"   normal! /(ns\vee"1y
+"   " normal ygg"1yy:new\\"1p$a)\\p:% ! nc localhost 50505\\
+" endfunction
+"
+" function! CopySelection()
+"   normal! gvy
+" endfunction
+"
+" function! FindExpr()
+"   normal! y%
+" endfunction
+"
+" function! DumpContentsToNewRegister()
+"   normal! :new\"1p$a)\p
+" endfunction
+"
+" function! PipeRegisterToRepl()
+"   normal! :% ! nc localhost 50505\
+" endfunction
+
+function! FindCljNs()
+  execute "normal! /(ns\<CR>vee\"1y"
+endfunction
+
+function! CopySelection()
+  execute "normal! gvy"
+endfunction
+
+function! FindExpr()
+  execute "normal! y%"
+endfunction
+
+function! DumpContentsToNewRegister()
+  execute "normal! :new\<CR>\"1p$a)\<CR>\<ESC>p"
+endfunction
+
+function! PipeRegisterToRepl()
+  execute "normal! :% ! nc localhost 50505\<CR>"
+endfunction
+
+
+function! SendSelectionToRepl()
+  call CopySelection()
+  call FindCljNs()
+  call DumpContentsToNewRegister()
+  call PipeRegisterToRepl()
+endfunction
+
+function! SendExprToRepl()
+  call FindExpr()
+  call FindCljNs()
+  call DumpContentsToNewRegister()
+  call PipeRegisterToRepl()
+endfunction
+
+nmap cpp :call SendExprToRepl()<CR>
+vmap cpp :'<,'>call SendSelectionToRepl()<CR>
+
+let @d = 'ygg"1yy:new"1p$a)p:% !./to_repl.sh'
+let @k = 'ygg0"1y3w:new"1pa)p:% ! nc localhost 50505'
