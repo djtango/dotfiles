@@ -20,18 +20,23 @@ Plugin 'Valloric/YouCompleteMe'
 Plugin 'rking/ag.vim'
 Plugin 'wlangstroth/vim-racket'
 Plugin 'altercation/vim-colors-solarized'
+Plugin 'ElmCast/elm-vim'
+
+" JS Dev
+Plugin 'pangloss/vim-javascript'
+Plugin 'mxw/vim-jsx'
 
 call vundle#end()
 filetype plugin indent on
 
 let g:solarized_termcolors=256
 " Daytime
-" colorscheme solarized
-" set bg=light
+colorscheme solarized
+set bg=light
 
 " Nighttime
-colorscheme gruvbox
-set bg=dark
+" colorscheme gruvbox
+" set bg=dark
 
 set number
 set relativenumber
@@ -126,3 +131,7 @@ let g:ycm_semantic_triggers = {
       \'racket' : ['-', ':']
       \}
 set omnifunc=syntaxcomplete#Complete
+
+"JSX settings
+" allow jsx indentation and highlighting in .js files
+let g:jsx_ext_required = 0
