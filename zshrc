@@ -84,6 +84,8 @@ setopt HIST_IGNORE_SPACE
   export PATH="$PATH:/usr/local/racket-6.5/bin" #add racket
  export PATH="$PATH:$HOME/symlinks" #add symlinks
  export PATH="$PATH:$HOME/torch/install/bin" #add torch
+ export PATH="$PATH:$HOME/luckymacro/bin" #add local dev bin
+ export PATH="$PATH:$HOME/luckymacro/js/node/node-v12.16.1-linux-x64/bin"
 
   if [ "$TERM" = "xterm" ]
   then

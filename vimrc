@@ -21,6 +21,10 @@ Plugin 'rking/ag.vim'
 Plugin 'wlangstroth/vim-racket'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'raichoo/purescript-vim'
+Plugin 'ElmCast/elm-vim'
+Plugin 'suoto/vim-hdl'
+Plugin 'reasonml-editor/vim-reason-plus'
+Plugin 'fatih/vim-go'
 
 call vundle#end()
 filetype plugin indent on
@@ -28,7 +32,7 @@ filetype plugin indent on
 let g:solarized_termcolors=256
 " Daytime
 colorscheme solarized
-set bg=light
+" set bg=light
 
 " Nighttime
 " colorscheme gruvbox
@@ -42,7 +46,7 @@ set bg=light
 
 " alt for pairbox
 " colorscheme solarized
-" set bg=dark
+set bg=dark
 set number
 " set relativenumber
 
@@ -163,7 +167,7 @@ set omnifunc=syntaxcomplete#Complete
 " endfunction
 
 function! FindCljNs()
-  execute "normal! /(ns\<CR>vee\"1y"
+  execute "normal! /(ns\<CR>vee\"1y\<C-O>"
 endfunction
 
 function! CopySelection()
@@ -178,6 +182,36 @@ function! DumpContentsToNewRegister()
   execute "normal! :new\<CR>\"1p$a)\<CR>\<ESC>p"
 endfunction
 
+function! WrapContentsInDoBlock()
+  set paste
+  " go to top of file
+  execute "normal! :0\<CR>"
+  " insert new line and prepend (do
+  execute "normal! O(do\<CR>\<ESC>"
+  " go to end of buffer and append )
+  execute "normal! Go)\<ESC>"
+  set nopaste
+endfunction
+
+function! CatContentsToReplLog()
+  execute "normal! :% ! cat >> dt_repl\<CR>"
+  execute "normal! :bd!\<CR>"
+  " execute "normal! :bp!|bd! #\<CR>"
+  " execute "normal! :e dt_repl\<CR>"
+endfunction
+
+" function! OpenReplLogAndPipeCodeToRepl()
+"   execute "normal! :e dt_repl\<CR>\" ! cat >> dt_repl\<CR>"
+" endfunction
+
+function! CatContentsToReplLog2()
+  execute "normal! :% ! cat >> foooo\<CR>"
+endfunction
+
+" function! ExecuteCommandInReplRegister()
+"   execute "normal! :new .vim_repl\<CR>\"1p$a)\<CR>\<ESC>p"
+" endfunction
+
 function! PipeRegisterToRepl()
   execute "normal! :% ! nc localhost 50505\<CR>"
 endfunction
@@ -187,18 +221,26 @@ function! SendSelectionToRepl()
   call CopySelection()
   call FindCljNs()
   call DumpContentsToNewRegister()
+  " call CatContentsToReplLog()
   call PipeRegisterToRepl()
+  call CatContentsToReplLog()
 endfunction
 
 function! SendExprToRepl()
   call FindExpr()
   call FindCljNs()
   call DumpContentsToNewRegister()
+  call WrapContentsInDoBlock()
   call PipeRegisterToRepl()
+  call CatContentsToReplLog()
 endfunction
 
 nmap cpp :call SendExprToRepl()<CR>
 vmap cpp :'<,'>call SendSelectionToRepl()<CR>
 
-let @d = 'ygg"1yy:new"1p$a)p:% !./to_repl.sh'
-let @k = 'ygg0"1y3w:new"1pa)p:% ! nc localhost 50505'
+" let @d = 'ygg"1yy:new\"1p$a)\p:% !./to_repl.sh\'
+" let @k = 'ygg0"1y3w:new\"1pa)\p:% ! nc localhost 50505\'
+let @p = ":call SendExprToRepl()"
+
+
+let g:go_gopls_enabled = 0
