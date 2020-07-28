@@ -25,9 +25,14 @@ Plugin 'ElmCast/elm-vim'
 Plugin 'suoto/vim-hdl'
 Plugin 'reasonml-editor/vim-reason-plus'
 Plugin 'fatih/vim-go'
+Plugin 'leafgarland/typescript-vim'
+Plugin 'peitalin/vim-jsx-typescript'
 
 call vundle#end()
 filetype plugin indent on
+
+" packadd! matchit
+" runtime macros/matchit.vim
 
 let g:solarized_termcolors=256
 " Daytime
@@ -77,6 +82,7 @@ endif
 "language-specific tabstops
 autocmd Filetype python setlocal ts=4 sts=4 sw=4
 autocmd Filetype java setlocal ts=4 sts=4 sw=4
+autocmd Filetype elm setlocal ts=4 sts=4 sw=4
 "autocmd Filetype scheme setlocal ts=1 sts=1 sw=1
 "Airline settings
 
@@ -95,10 +101,12 @@ set autoread
 let g:goldenview__enable_default_mapping = 0
 
 nmap <silent><leader>sgv <Plug>GoldenViewSplit
-nmap <silent><Tab> <Plug>GoldenViewNext
-nmap <silent><S-Tab> <Plug>GoldenViewPrevious
-nmap <silent><leader>n <Plug>GoldenViewSwitchToggle
-nmap <silent><leader>m <Plug>GoldenViewSwitchMain
+" nmap <silent><Tab> <Plug>GoldenViewNext
+" nmap <silent><S-Tab> <Plug>GoldenViewPrevious
+nmap <silent><leader>n <Plug>GoldenViewNext
+nmap <silent><leader>p <Plug>GoldenViewPrevious
+nmap <silent><leader>tgv <Plug>GoldenViewSwitchToggle
+nmap <silent><leader>mgv <Plug>GoldenViewSwitchMain
 
 " CtrlP auto cache clearing.
 " ----------------------------------------------------------------------------
@@ -115,9 +123,10 @@ if has("autocmd")
   autocmd VimEnter * :call SetupCtrlP()
 endif
 " configure ctrlP to ignore node modules
+let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
 let g:ctrlp_custom_ignore = 'node_modules'
-" let g:ctrlp_custom_ignore = 'bower_components'
-" let g:ctrlp_custom_ignore = 'public/bower_components'
+let g:ctrlp_custom_ignore = 'bower_components'
+let g:ctrlp_custom_ignore = 'public/bower_components'
 " move through buffers quicker
 nmap <leader>x :bn<cr>
 nmap <leader>z :bp<cr>
@@ -195,9 +204,13 @@ endfunction
 
 function! CatContentsToReplLog()
   execute "normal! :% ! cat >> dt_repl\<CR>"
-  execute "normal! :bd!\<CR>"
+  execute "normal! u\<CR>"
   " execute "normal! :bp!|bd! #\<CR>"
   " execute "normal! :e dt_repl\<CR>"
+endfunction
+
+function! CloseBuffer()
+  execute "normal! :bd!\<CR>"
 endfunction
 
 " function! OpenReplLogAndPipeCodeToRepl()
@@ -224,6 +237,7 @@ function! SendSelectionToRepl()
   " call CatContentsToReplLog()
   call PipeRegisterToRepl()
   call CatContentsToReplLog()
+  call CloseBuffer()
 endfunction
 
 function! SendExprToRepl()
@@ -231,8 +245,10 @@ function! SendExprToRepl()
   call FindCljNs()
   call DumpContentsToNewRegister()
   call WrapContentsInDoBlock()
+  " call CatContentsToReplLog()
   call PipeRegisterToRepl()
   call CatContentsToReplLog()
+  call CloseBuffer()
 endfunction
 
 nmap cpp :call SendExprToRepl()<CR>
@@ -244,3 +260,11 @@ let @p = ":call SendExprToRepl()"
 
 
 let g:go_gopls_enabled = 0
+
+
+function! IgnoreCarwowRuby()
+  set wildignore+=*/public/packs/*
+  set wildignore+=*/node_modules/*
+  set wildignore+=*/elm-stuff/*
+endfunction
+

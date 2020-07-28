@@ -2,3 +2,4 @@
 /vim/.*
 /oh-my-zsh
 /zsh_history
+vim/.netrwhist
