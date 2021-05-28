@@ -27,6 +27,7 @@ Plugin 'reasonml-editor/vim-reason-plus'
 Plugin 'fatih/vim-go'
 Plugin 'leafgarland/typescript-vim'
 Plugin 'peitalin/vim-jsx-typescript'
+Plugin 'NLKNguyen/papercolor-theme'
 
 call vundle#end()
 filetype plugin indent on
@@ -37,7 +38,7 @@ filetype plugin indent on
 let g:solarized_termcolors=256
 " Daytime
 colorscheme solarized
-" set bg=light
+set bg=light
 
 " Nighttime
 " colorscheme gruvbox
@@ -51,7 +52,7 @@ colorscheme solarized
 
 " alt for pairbox
 " colorscheme solarized
-set bg=dark
+" set bg=dark
 set number
 " set relativenumber
 
@@ -230,10 +231,11 @@ function! PipeRegisterToRepl()
 endfunction
 
 
-function! SendSelectionToRepl()
+function! SendSelectionToRepl() range
   call CopySelection()
   call FindCljNs()
   call DumpContentsToNewRegister()
+  call WrapContentsInDoBlock()
   " call CatContentsToReplLog()
   call PipeRegisterToRepl()
   call CatContentsToReplLog()
@@ -252,7 +254,7 @@ function! SendExprToRepl()
 endfunction
 
 nmap cpp :call SendExprToRepl()<CR>
-vmap cpp :'<,'>call SendSelectionToRepl()<CR>
+vmap cpp :call SendSelectionToRepl()<CR>
 
 " let @d = 'ygg"1yy:new\"1p$a)\p:% !./to_repl.sh\'
 " let @k = 'ygg0"1y3w:new\"1pa)\p:% ! nc localhost 50505\'
@@ -268,3 +270,16 @@ function! IgnoreCarwowRuby()
   set wildignore+=*/elm-stuff/*
 endfunction
 
+let g:netrw_liststyle = 3
+
+function! GitHubLink()
+  redir => currentFile
+  silent execute "echo @%"
+  redir END
+  redir => currentLine
+  silent execute "echo line(\".\")"
+  redir END
+  echo "https://github.com/carwow/importer/tree/master/" . trim(currentFile) . "#L" . trim(currentLine)
+endfunction
+
+nmap <leader>ghl :call GitHubLink()<cr>
