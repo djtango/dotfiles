@@ -1,4 +1,12 @@
-{
+{:deps {org.clojure/test.check {:mvn/version "0.10.0-alpha3"}}
  :aliases {:rebel {:extra-deps {com.bhauman/rebel-readline {:mvn/version "0.1.4"}}
-                   :main-opts  ["-m" "rebel-readline.main"]}}
-}
+                   :main-opts  ["-m" "rebel-readline.main"]}
+           :deon {:extra-deps {user {:local/root "/home/deon/luckymacro/clojure/local-dev"}}
+                  :main-opts  ["-m" "rebel-readline.main"]}
+           :socket {:jvm-opts ["-Dclojure.server.repl={:port,50505,:accept,clojure.core.server/repl}"]}
+           :http-client {:extra-deps {http-kit {:mvn/version "2.3.0"}}}
+           :jdbc {:extra-deps {org.clojure/java.jdbc {:mvn/version "0.7.9"}}}
+           :munge {:extra-deps {org.clojure/data.json {:mvn/version "0.2.6"}}}
+           :async {:extra-deps {org.clojure/core.async {:mvn/version "0.4.500"}}}
+           :reload {:extra-deps {org.clojure/tools.namespace {:mvn/version "1.0.0"}}}
+           }}
