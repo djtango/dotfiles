@@ -1,0 +1,4 @@
+**/*.swo
+**/*.swp
+**/dt_repl
+**/.rebel_readline_history

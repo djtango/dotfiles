@@ -4,14 +4,12 @@
 # This script creates symlinks from the home directory to any desired dotfiles in ~/dotfiles
 #################
 
+set -e
 
-########### Variables
-
-dir=~/dotfiles         # dotfiles directory
 olddir=~/dotfiles_old  # old dotfiles backup directory
-files="bashrc vimrc vim zsh zsh_history oh-my-zsh clojure tmux.conf" # list of files/folders to symlink in homedir
-
-########
+currdir=`dirname "$(readlink -f "$0")"`
+dir=$currdir         # dotfiles directory
+files="gitignore_global bashrc vimrc vim zsh zsh_history oh-my-zsh clojure tmux.conf lein" # list of files/folders to symlink in homedir
 
 # create dotfiles_old in homedir
 echo "Creating $olddir for backup of any existing dotfiles in ~"
@@ -26,8 +24,9 @@ echo "...done"
 # move any existing dotfiles in homedir to dotfiles_old directory, then create symlinks
 for file in $files; do
 	echo "Moving any existing dotfiles from ~ to $olddir"
-	mv ~/.$file ~/dotfiles_old/
+	if [ -f ~/.$file ]; then
+		mv ~/.$file ~/dotfiles_old/
+	fi
 	echo "Creating symlink to $file in home directory."
 	ln -s $dir/$file ~/.$file
 done
-
