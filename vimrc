@@ -26,6 +26,8 @@ Plugin 'fatih/vim-go'
 Plugin 'leafgarland/typescript-vim'
 Plugin 'peitalin/vim-jsx-typescript'
 Plugin 'NLKNguyen/papercolor-theme'
+Plugin 'dart-lang/dart-vim-plugin'
+Plugin 'jparise/vim-graphql'
 
 call vundle#end()
 filetype plugin indent on
@@ -91,9 +93,9 @@ let g:airline#extensions#tabline#enabled = 1
 nmap <leader>src :w<cr> :source $MYVIMRC<cr>
 
 "Setting up auto-save
-:au FocusLost * :wa
-set autowrite
-set autoread
+" :au FocusLost * :wa
+" set autowrite
+" set autoread
 
 "GoldenView Settings
 
@@ -122,10 +124,18 @@ if has("autocmd")
   autocmd VimEnter * :call SetupCtrlP()
 endif
 " configure ctrlP to ignore node modules
-let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
-let g:ctrlp_custom_ignore = 'node_modules'
-let g:ctrlp_custom_ignore = 'bower_components'
-let g:ctrlp_custom_ignore = 'public/bower_components'
+let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard | grep -v -G "\(.svg\)\|\(.png\)\|\(.jpg\)$"']
+
+let g:ctrlp_custom_ignore = {
+  \ 'dir':  '\v[\/]\app\v[\/]assets$',
+  \ }
+
+
+
+" let g:ctrlp_custom_ignore = 'node_modules'
+" let g:ctrlp_custom_ignore = 'bower_components'
+" let g:ctrlp_custom_ignore = 'public/bower_components'
+let g:ctrlp_custom_ignore = 'app/assets'
 " move through buffers quicker
 nmap <leader>x :bn<cr>
 nmap <leader>z :bp<cr>
@@ -262,11 +272,17 @@ let @p = ":call SendExprToRepl()"
 let g:go_gopls_enabled = 0
 
 
-function! IgnoreCarwowRuby()
-  set wildignore+=*/public/packs/*
-  set wildignore+=*/node_modules/*
-  set wildignore+=*/elm-stuff/*
+" function! IgnoreCarwowRuby()
+"   set wildignore+=*/public/packs/*
+"   set wildignore+=*/node_modules/*
+"   set wildignore+=*/elm-stuff/*
+" endfunction
+function! IgnoreLollipop()
+  set wildignore+=*/app/assets**.
+  set wildignore+=*/app/assets**/*.svg
 endfunction
+
+" call IgnoreLollipop()
 
 let g:netrw_liststyle = 3
 
@@ -274,10 +290,17 @@ function! GitHubLink()
   redir => currentFile
   silent execute "echo @%"
   redir END
+  redir => repo
+  silent execute "echo expand('%:p:h:t')"
+  redir END
+  redir => org
+  silent execute "echo expand('%:p:h:h:t')"
+  redir END
+  let gitsha = system('git rev-parse --short HEAD')
   redir => currentLine
   silent execute "echo line(\".\")"
   redir END
-  echo "https://github.com/carwow/importer/tree/master/" . trim(currentFile) . "#L" . trim(currentLine)
+  echo "https://github.com/lollipopai/lollipop-alpha/tree/" . trim(gitsha) . "/" . trim(currentFile) . "#L" . trim(currentLine)
 endfunction
 
 nmap <leader>ghl :call GitHubLink()<cr>

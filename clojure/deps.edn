@@ -7,6 +7,7 @@
            :http-client {:extra-deps {http-kit {:mvn/version "2.3.0"}}}
            :jdbc {:extra-deps {org.clojure/java.jdbc {:mvn/version "0.7.9"}}}
            :munge {:extra-deps {org.clojure/data.json {:mvn/version "0.2.6"}}}
+           :json {:extra-deps {org.clojure/data.json {:mvn/version "0.2.6"}}}
            :async {:extra-deps {org.clojure/core.async {:mvn/version "0.4.500"}}}
            :reload {:extra-deps {org.clojure/tools.namespace {:mvn/version "1.0.0"}}}
            }}

@@ -1,4 +1,4 @@
-.PHONY: build vim-plugins compile-ycm check-cmake cmake python3-dev gcc-cpp vimx zsh
+.PHONY: build vim-plugins compile-ycm check-cmake cmake python3-dev gcc-cpp vimx zsh ycm-deps cinnamon
 
 vim-plugins:
 	@ echo "installing vundle..."
@@ -19,6 +19,11 @@ endif
 	@ ./check-deps.sh python3-devel || (echo "python3-devel not found"; exit 1)
 	@ ./check-deps.sh gcc-c++ || (echo "gcc-c++ not found"; exit 1)
 
+ycm-deps:
+	cmake
+	python3-dev
+	gcc-cpp
+
 cmake:
 	sudo dnf install cmake
 
@@ -35,3 +40,7 @@ zsh:
 	sudo dnf install zsh
 	(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh) | sh
 	chsh -s /usr/bin/zsh
+
+cinnamon:
+	sudo dnf grouplist -v
+	sudo dnf install @cinnamon-desktop-environment
